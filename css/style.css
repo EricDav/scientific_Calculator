@@ -1,0 +1,69 @@
+.main{
+	height: 480px;
+	width: 270px;
+	background-color: black;
+	position: relative;
+}
+.screen{
+	position: absolute;
+	height: 70px;
+	width: 258px;
+	background-color: #f8f8ff;
+	margin-top: 6px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+.numbers{
+	position: absolute;
+	width: 258px;
+	height: 200px;
+	/*background-color: red;*/
+	margin-top: 275px;
+	margin-left: 6px;
+}
+.number{
+	position: absolute;
+	height: 35px;
+	width: 254px;
+	/*background-color: blue;*/
+	margin-left: 2px;
+}
+.number1{
+	margin-top: 10px;
+}
+.number2{
+	margin-top: 55px;
+}
+.number3{
+	margin-top: 110px;
+}
+.number1{
+	margin-top: 165px;
+}
+.button:hover { 
+    background-color: red;
+	}
+.button{
+	width: 45px;
+	height: 30px;
+	margin-left: 5px;
+	background-color: black;
+	color:white;
+	float: left;
+}
+.question{
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	background-color: green;
+	margin-top: 4px;
+	margin-left: 4px;
+}
+.answer{
+	position: absolute;
+	width: 80px;
+	height: 40px;
+	margin-left: 173px;
+	margin-top: 28px;
+	background-color: purple;
+}

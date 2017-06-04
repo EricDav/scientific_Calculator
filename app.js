@@ -2,6 +2,19 @@ const isDigit = function(ch) {
  	return /\d/.test(ch);
  }
 
+ const validate =  {
+ 	operators : (f, l) => {
+ 		const chr = ['+', '-', 'x', '/', '.', 'EXP', '='];
+ 		if(chr.includes(f) && chr.includes(l)){
+ 			if(f === l){
+ 				return 0;
+ 			}
+ 			return 1;
+ 		}
+ 		return 2;
+ 	}
+ }
+
  const divMult = (str) => {
  	let result = 1;
  	let arr = [];
@@ -102,6 +115,27 @@ class Numbers{
 	clear(){
 		this.question = '';
 	}
+	getLast(){
+		if(this.question === ''){
+			return '#';
+		}
+		let que = this.question.replace(/\s/g,'');
+		return que[que.length -1];
+	}
+	replaceLast(ele){
+		let que = this.question.split('');
+		if(que[que.length -1] === ' '){
+			que.pop();
+			que.pop();
+			que.push(ele);
+			this.question = que.join('');
+		}
+		else{
+			que.pop();
+			que.push(ele);
+			this.question = que.join('');
+		}
+	}
 }
 
 const Num = new Numbers();
@@ -109,17 +143,34 @@ const Num = new Numbers();
 function Number(detail){
 	
 	let number = detail.id;
+	let validat = validate.operators(Num.getLast(), number); //validating input for simple arithmetic
+	console.log(validat);
 	if(number === '=') {
-		let answer = Num.getAnswer();
-		document.getElementById('ans').textContent = answer;
+		if(validat === 1){
+			document.getElementById('ans').textContent = 'Invalid Syntax!';
+		}
+		else{
+			let answer = Num.getAnswer();
+			document.getElementById('ans').textContent = answer;
+		}
 	}
 	else if(number === 'AC'){
 		Num.clear();
 		document.getElementById('ques').textContent = '';
-		document.getElementById('ans').textContent = '';	
+		document.getElementById('ans').textContent = '0';	
 	}
 	else{
-		let ques = Num.Value(number);
-		document.getElementById('ques').textContent = ques;
+		if(validat === 1){
+			Num.replaceLast(number);
+			document.getElementById('ques').textContent = Num.question;
+		}
+		else if(validat === 0){
+
+		}
+		else{
+			let que = Num.Value(number);
+			document.getElementById('ques').textContent = que;
+			console.log(que);
+		}
 	}
 }

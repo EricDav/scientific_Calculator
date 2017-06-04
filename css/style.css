@@ -41,29 +41,37 @@
 	margin-top: 165px;
 }
 .button:hover { 
-    background-color: red;
+    background-color: blue;
 	}
 .button{
 	width: 45px;
 	height: 30px;
 	margin-left: 5px;
-	background-color: black;
+	background-color: green;
 	color:white;
 	float: left;
 }
 .question{
 	position: absolute;
-	width: 100px;
-	height: 50px;
-	background-color: green;
-	margin-top: 4px;
-	margin-left: 4px;
+	text-align: left;
+	width: 200px;
+	height: 10px;
+	/*background-color: green*/;
+	margin-top: 10px;
+	margin-left: 5px;
 }
 .answer{
 	position: absolute;
-	width: 80px;
+	width: 250px;
 	height: 40px;
-	margin-left: 173px;
-	margin-top: 28px;
-	background-color: purple;
+	margin-left: 0px;
+	margin-top: 48px;
+	text-align: right;
+	/*background-color: purple;*/
+}
+#AC:hover { 
+    background-color: blue;
+	}
+#AC{
+	background-color: red;
 }

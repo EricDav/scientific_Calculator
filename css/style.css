@@ -53,10 +53,13 @@
 	float: left;
 }
 .question{
+	text-overflow: ellipsis-word;
+	white-space: nowrap;
+  	overflow: auto;
 	position: absolute;
 	text-align: left;
-	width: 200px;
-	height: 10px;
+	width: 250px;
+	height: 30px;
 	/*background-color: green*/;
 	margin-top: 10px;
 	margin-left: 5px;

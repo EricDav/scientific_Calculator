@@ -122,7 +122,7 @@ class Numbers{
 		let que = this.question.replace(/\s/g,'');
 		return que[que.length -1];
 	}
-	replaceLast(ele){
+	replaceLast(ele=''){
 		let que = this.question.split('');
 		if(que[que.length -1] === ' '){
 			que.pop();
@@ -158,6 +158,10 @@ function Number(detail){
 		Num.clear();
 		document.getElementById('ques').textContent = '';
 		document.getElementById('ans').textContent = '0';	
+	}
+	else if(number === 'DEL'){
+		Num.replaceLast();
+		document.getElementById('ques').textContent = Num.question;
 	}
 	else{
 		if(validat === 1){
